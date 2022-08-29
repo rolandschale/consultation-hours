@@ -2,7 +2,7 @@
 
 <?php $this->block('content'); ?>
 
-    <h3><?= $this->helloTitle ?></h3>
+    <h3><?= $this->headline ?></h3>
     <p><?= $this->helloText ?></p>
 
 <?php $this->endblock(); ?>

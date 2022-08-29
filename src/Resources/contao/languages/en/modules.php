@@ -17,8 +17,8 @@ use Rolandschale\ConsultationHoursBundle\Controller\FrontendModule\ConsultationH
 /**
  * Backend modules
  */
-$GLOBALS['TL_LANG']['MOD']['consultation_hours_modules'] = 'Sprechzeiten';
-$GLOBALS['TL_LANG']['MOD']['consultation_hours_collection'] = ['Sprechzeiten', 'Sprechzeiten'];
+$GLOBALS['TL_LANG']['MOD']['consultation_hours_modules'] = 'Stammdaten';
+$GLOBALS['TL_LANG']['MOD']['consultation_hours_collection'] = ['Sprechzeiten', 'Bearbeiten der Sprechzeiten'];
 
 /**
  * Frontend modules

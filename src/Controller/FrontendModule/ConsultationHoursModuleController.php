@@ -130,6 +130,14 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
             $template->helloText = 'Our guests today are: ' . implode(', ', $arrGuests);
         }
 
+
+/* -----------------------------------
+    Start
+ -----------------------------------*/
+ 
+        $template->headline = 'test';
+ 
+ 
         return $template->getResponse();
     }
 }
