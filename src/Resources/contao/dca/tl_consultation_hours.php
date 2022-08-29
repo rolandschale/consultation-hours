@@ -44,7 +44,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours'] = array(
             'panelLayout' => ''
         ),
         'label'             => array(
-            'fields' => array('title'),
+            'fields' => array('title','multitextField'),
             'format' => '%s',
         ),
         'global_operations' => array(
