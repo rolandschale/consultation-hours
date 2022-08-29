@@ -143,8 +143,46 @@ $GLOBALS['TL_DCA']['tl_consultation_hours'] = array(
             'sorting'   => true,
             'eval'      => array('multiple' => true, 'size' => 4, 'decodeEntities' => true, 'tl_class' => 'w50'),
             'sql'       => "varchar(255) NOT NULL default ''"
-        )
-
+        ),
+/*-------------------------------------------------------*/
+        'akkordeons' => [
+            'label' => [
+                'de' => [
+                    'Objekte',
+                    'Fügen Sie beliebig viele Objekte ein.',
+                ],
+            ],
+            'elementLabel' => [
+                'de' => 'Akkordeon %s',
+            ],
+            'inputType' => 'list',
+            'fields' => [
+                'headline' => [
+                    'label' => [
+                        'de' => ['Überschrift', ''],
+                    ],
+                    'inputType' => 'text',
+                    'eval' => ['tl_class' => ''],
+                ],
+                'text' => [
+                    'label' => [
+                        'de' => ['Text', ''],
+                    ],
+                    'inputType' => 'textarea',
+                    'eval' => ['rte'=>'tinyMCE', 'tl_class' => ''],
+                ],
+                'background' => [
+                    'label' => ['Akkordeon Hintergrund',''],
+                    'inputType' => 'select',
+                    'options' => [  'none'=>'kein Hintergrund', 
+                            'bg_light-grey_full'=>'light-grey'
+                        ],
+                    'eval'  => ['tl_class'=>'w50','mandatory'=>true],
+        
+                ]
+            ],
+        ],
+/*-------------------------------------------------------*/
     )
 );
 
