@@ -83,7 +83,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours'] = array(
     // Palettes
     'palettes'    => array(
         '__selector__' => array('addSubpalette'),
-        'default'      => '{first_legend},title,selectField,checkboxField,multitextField;{second_legend},addSubpalette'
+        'default'      => '{first_legend},title,selectField,checkboxField,multitextField;{second_legend},akkordeons,addSubpalette'
     ),
     // Subpalettes
     'subpalettes' => array(
