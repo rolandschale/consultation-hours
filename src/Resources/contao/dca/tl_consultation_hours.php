@@ -82,13 +82,9 @@ $GLOBALS['TL_DCA']['tl_consultation_hours'] = array(
     ),
     // Palettes
     'palettes'    => array(
-        '__selector__' => array('addSubpalette'),
-        'default'      => '{first_legend},title,selectField,checkboxField,multitextField;{second_legend},akkordeons,addSubpalette'
+         'default'      => '{first_legend},title,multitextField'
     ),
-    // Subpalettes
-    'subpalettes' => array(
-        'addSubpalette' => 'textareaField',
-    ),
+
     // Fields
     'fields'      => array(
         'id'             => array(
@@ -107,34 +103,6 @@ $GLOBALS['TL_DCA']['tl_consultation_hours'] = array(
             'eval'      => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'),
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
-        'selectField'    => array(
-            'inputType' => 'select',
-            'exclude'   => true,
-            'search'    => true,
-            'filter'    => true,
-            'sorting'   => true,
-            'reference' => $GLOBALS['TL_LANG']['tl_consultation_hours'],
-            'options'   => array('firstoption', 'secondoption'),
-            //'foreignKey'            => 'tl_user.name',
-            //'options_callback'      => array('CLASS', 'METHOD'),
-            'eval'      => array('includeBlankOption' => true, 'tl_class' => 'w50'),
-            'sql'       => "varchar(255) NOT NULL default ''",
-            //'relation'  => array('type' => 'hasOne', 'load' => 'lazy')
-        ),
-        'checkboxField'  => array(
-            'inputType' => 'select',
-            'exclude'   => true,
-            'search'    => true,
-            'filter'    => true,
-            'sorting'   => true,
-            'reference' => $GLOBALS['TL_LANG']['tl_consultation_hours'],
-            'options'   => array('firstoption', 'secondoption'),
-            //'foreignKey'            => 'tl_user.name',
-            //'options_callback'      => array('CLASS', 'METHOD'),
-            'eval'      => array('includeBlankOption' => true, 'chosen' => true, 'tl_class' => 'w50'),
-            'sql'       => "varchar(255) NOT NULL default ''",
-            //'relation'  => array('type' => 'hasOne', 'load' => 'lazy')
-        ),
         'multitextField' => array(
             'inputType' => 'text',
             'exclude'   => true,
@@ -144,45 +112,6 @@ $GLOBALS['TL_DCA']['tl_consultation_hours'] = array(
             'eval'      => array('multiple' => true, 'size' => 4, 'decodeEntities' => true, 'tl_class' => 'w50'),
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
-/*-------------------------------------------------------*/
-        'akkordeons' => [
-            'label' => [
-                'de' => [
-                    'Objekte',
-                    'Fügen Sie beliebig viele Objekte ein.',
-                ],
-            ],
-            'elementLabel' => [
-                'de' => 'Akkordeon %s',
-            ],
-            'inputType' => 'list',
-            'fields' => [
-                'headline' => [
-                    'label' => [
-                        'de' => ['Überschrift', ''],
-                    ],
-                    'inputType' => 'text',
-                    'eval' => ['tl_class' => ''],
-                ],
-                'text' => [
-                    'label' => [
-                        'de' => ['Text', ''],
-                    ],
-                    'inputType' => 'textarea',
-                    'eval' => ['rte'=>'tinyMCE', 'tl_class' => ''],
-                ],
-                'background' => [
-                    'label' => ['Akkordeon Hintergrund',''],
-                    'inputType' => 'select',
-                    'options' => [  'none'=>'kein Hintergrund', 
-                            'bg_light-grey_full'=>'light-grey'
-                        ],
-                    'eval'  => ['tl_class'=>'w50','mandatory'=>true],
-        
-                ]
-            ],
-        ],
-/*-------------------------------------------------------*/
     )
 );
 
