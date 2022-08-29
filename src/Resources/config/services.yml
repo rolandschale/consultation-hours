@@ -1,0 +1,22 @@
+services:
+
+    # Contao frontend module Rolandschale\ConsultationHoursBundle\Controller\FrontendModule\ConsultationHoursModuleController
+    # We used annotations for tagging the frontend module category, the frontend module type and the frontend module template
+    Rolandschale\ConsultationHoursBundle\Controller\FrontendModule\ConsultationHoursModuleController:
+        tags:
+            - { name: container.service_subscriber }
+        public: true
+        # Since Symfony 5 the container has to be set manually
+        calls:
+            - [ setContainer, [ '@Psr\Container\ContainerInterface' ] ]
+    
+    # Contao content element Rolandschale\ConsultationHoursBundle\Controller\ContentElement\HeroimageElementController
+    # We used annotations for tagging the frontend element category, the frontend element type and the frontend element template
+    Rolandschale\ConsultationHoursBundle\Controller\ContentElement\HeroimageElementController:
+        tags:
+            - { name: container.service_subscriber }
+        public: true
+        # Since Symfony 5 the container has to be set manually
+        calls:
+            - [ setContainer, [ '@Psr\Container\ContainerInterface' ] ]
+
