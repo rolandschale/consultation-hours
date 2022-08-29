@@ -38,10 +38,10 @@ $GLOBALS['TL_DCA']['tl_consultation_hours'] = array(
     ),
     'list'        => array(
         'sorting'           => array(
-            'mode'        => 2,
+            'mode'        => 0,
             'fields'      => array('title'),
             'flag'        => 1,
-            'panelLayout' => 'filter;sort,search,limit'
+            'panelLayout' => ''
         ),
         'label'             => array(
             'fields' => array('title'),
@@ -143,22 +143,8 @@ $GLOBALS['TL_DCA']['tl_consultation_hours'] = array(
             'sorting'   => true,
             'eval'      => array('multiple' => true, 'size' => 4, 'decodeEntities' => true, 'tl_class' => 'w50'),
             'sql'       => "varchar(255) NOT NULL default ''"
-        ),
-        'addSubpalette'  => array(
-            'exclude'   => true,
-            'inputType' => 'checkbox',
-            'eval'      => array('submitOnChange' => true, 'tl_class' => 'w50 clr'),
-            'sql'       => "char(1) NOT NULL default ''"
-        ),
-        'textareaField'  => array(
-            'inputType' => 'textarea',
-            'exclude'   => true,
-            'search'    => true,
-            'filter'    => true,
-            'sorting'   => true,
-            'eval'      => array('rte' => 'tinyMCE', 'tl_class' => 'clr'),
-            'sql'       => 'text NULL'
         )
+
     )
 );
 
