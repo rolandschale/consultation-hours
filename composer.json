@@ -22,8 +22,7 @@
     "source": "https://github.com/rolandschale/consultation-hours-bundle"
   },
   "require": {
-    "contao/core-bundle": "^4.9",
-    "rolandschale/consultation-hours": "dev-main"
+    "contao/core-bundle": "^4.9"
   },
   "require-dev": {
     "contao/easy-coding-standard": "^3.0",
@@ -49,11 +48,5 @@
   "extra": {
     "contao-manager-plugin": "Rolandschale\\ConsultationHoursBundle\\ContaoManager\\Plugin"
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/rolandschale/consultation-hours-bundle"
-    }
-  ],
   "version": "1.0"
 }
