@@ -39,7 +39,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours'] = array(
     'list'        => array(
         'sorting'           => array(
             'mode'        => 0,
-            'fields'      => array('title'),
+            'fields'      => array('id'),
             'flag'        => 11,
             'panelLayout' => ''
         ),
