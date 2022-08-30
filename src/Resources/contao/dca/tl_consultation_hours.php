@@ -44,7 +44,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours'] = array(
             'panelLayout' => ''
         ),
         'label'             => array(
-            'fields' => array('title','multitextField'),
+            'fields' => array('title','multitextField[0]','multitextField[1]','multitextField[2]','multitextField[3]'),
             'format' => '%s',
         ),
         'global_operations' => array(
@@ -82,7 +82,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours'] = array(
     ),
     // Palettes
     'palettes'    => array(
-         'default'      => '{first_legend},title,multitextField[0],multitextField[1],multitextField[2],multitextField[3]'
+         'default'      => '{first_legend},title,multitextField'
     ),
 
     // Fields
