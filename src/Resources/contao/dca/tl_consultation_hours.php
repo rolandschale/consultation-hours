@@ -82,7 +82,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours'] = array(
     ),
     // Palettes
     'palettes'    => array(
-         'default'      => '{first_legend},title,multitextField'
+         'default'      => '{first_legend},title,multitextField[0],multitextField[1],multitextField[2],multitextField[3]'
     ),
 
     // Fields
