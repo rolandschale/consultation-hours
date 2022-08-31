@@ -85,26 +85,7 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
      */
     protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
     {
-//         $userFirstname = 'DUDE';
-//         $user = $this->get('security.helper')->getUser();
-// 
-//         // Get the logged in frontend user... if there is one
-//         if ($user instanceof FrontendUser)
-//         {
-//             $userFirstname = $user->firstname;
-//         }
 
-        /** @var Session $session */
-        // $session = $request->getSession();
-        // $bag = $session->getBag('contao_frontend');
-        // $bag->set('foo', 'bar');
-
-        /** @var Date $dateAdapter */
-//         $dateAdapter = $this->get('contao.framework')->getAdapter(Date::class);
-// 
-//         $intWeekday = $dateAdapter->parse('w');
-//         $translator = $this->get('translator');
-//         $strWeekday = $translator->trans('DAYS.' . $intWeekday, [], 'contao_default');
 
         $arrDays = [];
         $arrDump = [];
@@ -113,14 +94,14 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
         $db = $this->get('database_connection');
 
         /** @var \Doctrine\DBAL\Result $stmt */
-        // $stmt = $db->executeQuery('SELECT * FROM tl_member WHERE gender = ? ORDER BY lastname', ['female']);
         $stmt = $db->executeQuery('SELECT * FROM tl_consultation_hours');
 
         $template->consultationsTitle = 'Sprechzeiten';
 
         while (false !== ($row = $stmt->fetchAssociative()))
         {
-            $string = unserialize($row['multitextField']);
+            $string[] = unserialize($row['multitextField']);
+            
             $arrDays[] = '<div class="row">';
             $arrDays[] = '<div class="day">' . $row['title'] . '</div>';
             $arrDays[] = '<div class="time_am">';
@@ -132,8 +113,8 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
             $arrDays[] = '<div class="time_to_pm">' . $string[3] . '</div>';
             $arrDays[] = '</div>';            
             $arrDays[] = '</div>';     
-            $arrDump[] = '##1##' . $row['multitextField'];       
-            $arrDump[] = '##2##' . unserialize($row['multitextField']);           
+            //$arrDump[] = '##1##' . $row['multitextField'];       
+            //$arrDump[] = '##2##' . unserialize($row['multitextField']);           
         }
 
         $template->consultationsRow = '';
@@ -143,34 +124,9 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
         }
 
         if (!empty($arrDump)){
-            $template->dump = $arrDump;
+            //$template->dump = $arrDump;
         }        
-/* -----------------------------------
-    Start
-    
-    
-    
-    <div class="ce_rsce_open_hours">
-      <div class="headline">
-        <h3><i class="fa-solid fa-clock"></i>&nbsp;&nbsp;Sprechzeiten</h3>
-      </div>
-      <div>
-        <div class="row">
-          <div class="day">Montag</div>
-          <div class="time_am">
-            <div class="time_from_am">08:00</div>
-            <div class="time_to_am">bis 13:00 Uhr</div>
-          </div>
-          <div class="time_pm">
-            <div class="time_from_pm">&nbsp;</div>
-            <div class="time_to_pm">&nbsp;</div>
-          </div>
-        </div>
-      </div>
-    </div>
- -----------------------------------*/
- 
-        //$template->headline = $this->get('title');
+
  
  
         return $template->getResponse();
