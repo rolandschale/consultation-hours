@@ -107,7 +107,7 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
 //         $strWeekday = $translator->trans('DAYS.' . $intWeekday, [], 'contao_default');
 
         $arrDays = [];
-
+        $arrDump = [];
         // Get the database connection
         $db = $this->get('database_connection');
 
@@ -129,7 +129,12 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
             $arrDays[] = '<div class="time_from_pm">' . $row['multitextField'][0][2] . '</div>';
             $arrDays[] = '<div class="time_to_pm">' . $row['multitextField'][0][3] . '</div>';
             $arrDays[] = '</div>';            
-            $arrDays[] = '</div>';            
+            $arrDays[] = '</div>';     
+            $arrDump[] = '##1##' . $row['multitextField'];       
+            $arrDump[] = '##2##' . $row['multitextField'][0];       
+            $arrDump[] = '##3##' . $row['multitextField']['a'];       
+            $arrDump[] = '##4##' . $row['multitextField']['a'][0];       
+            $arrDump[] = '##5##' . $row['multitextField']->a;       
         }
 
         $template->consultationsRow = '';
@@ -139,7 +144,6 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
         }
 
         
-
 /* -----------------------------------
     Start
     
