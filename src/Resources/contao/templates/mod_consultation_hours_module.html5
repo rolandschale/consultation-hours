@@ -11,9 +11,10 @@
       </div>
     </div>
 
-    <pre>
-        <?= $this->dump ?>
 
+    <?= $this->arrDump ?>
+
+    <pre>
         <?php //echo $this->showTemplateVars(); ?>
     </pre>   
 <?php $this->endblock(); ?>
