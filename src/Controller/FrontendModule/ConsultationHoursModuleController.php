@@ -100,7 +100,7 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
 
         while (false !== ($row = $stmt->fetchAssociative()))
         {
-            $string[] = unserialize($row['multitextField']);
+            $string = unserialize($row['multitextField']);
             
             $arrDays[] = '<div class="row">';
             $arrDays[] = '<div class="day">' . $row['title'] . '</div>';
