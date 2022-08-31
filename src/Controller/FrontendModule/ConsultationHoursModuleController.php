@@ -117,7 +117,8 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
 
         while (false !== ($row = $stmt->fetchAssociative()))
         {
-            $arrDays[] = $row['title'];
+            $arrDays[] = $row['title'].$row['multitextField'];
+            
         }
 
         $template->helloTitle = sprintf(
@@ -128,7 +129,7 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
         $template->helloText = '';
 
         if (!empty($arrDays)){
-            $template->helloText = 'Tage: ' . implode(', ', $arrDays);
+            $template->helloText = $arrDays;
         }
 
 
