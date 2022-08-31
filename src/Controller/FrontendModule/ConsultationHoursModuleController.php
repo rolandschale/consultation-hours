@@ -134,7 +134,7 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
             $template->helloText = $arrDays[0] . $arrDays[1] . $arrDays[2];
         }
 
-        $template->wrapperClose = '</div>'
+        $template->wrapperClose = '</div>';
 
 /* -----------------------------------
     Start
