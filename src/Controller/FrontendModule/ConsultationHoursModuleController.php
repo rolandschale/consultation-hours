@@ -131,10 +131,7 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
             $arrDays[] = '</div>';            
             $arrDays[] = '</div>';     
             $arrDump[] = '##1##' . $row['multitextField'];       
-            $arrDump[] = '##2##' . $row['multitextField'][0];       
-            $arrDump[] = '##3##' . $row['multitextField']['a'];       
-            $arrDump[] = '##4##' . $row['multitextField']['a'][0];       
-            $arrDump[] = '##5##' . $row['multitextField']->a;       
+            $arrDump[] = '##2##' . unserialize($row['multitextField']);           
         }
 
         $template->consultationsRow = '';
