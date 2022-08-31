@@ -105,16 +105,37 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
             $arrDays[] = '<div class="row">';
             $arrDays[] = '<div class="day">' . $row['title'] . '</div>';
             $arrDays[] = '<div class="time_am">';
-            $arrDays[] = '<div class="time_from_am">' . $string[0] . ' Uhr</div>';
-            $arrDays[] = '<div class="time_to_am">bis ' . $string[1]  . ' Uhr</div>';
+            
+            $arrDays[] = '<div class="time_from_am">';
+            if ($string[0] != '') {
+                $arrDays[] = $string[0] . ' Uhr';
+            }
+            $arrDays[] = '</div>';
+            
+            $arrDays[] = '<div class="time_to_am">';
+            if ($string[1] != '') {
+                $arrDays[] = 'bis ' . $string[1] . ' Uhr';
+            }
+            $arrDays[] = '</div>';
+            
             $arrDays[] = '</div>';
             $arrDays[] = '<div class="time_pm">';
-            $arrDays[] = '<div class="time_from_pm">' . $string[2] . '</div>';
-            $arrDays[] = '<div class="time_to_pm">' . $string[3] . '</div>';
-            $arrDays[] = '</div>';            
+            
+            $arrDays[] = '<div class="time_from_pm">';
+            if ($string[2] != '') {
+                $arrDays[] = $string[2] . ' Uhr';
+            }
+            $arrDays[] = '</div>';
+            
+            $arrDays[] = '<div class="time_to_pm">';
+            if ($string[3] != '') {
+                $arrDays[] = 'bis ' . $string[3] . ' Uhr';
+            }
+            $arrDays[] = '</div>';      
+                  
             $arrDays[] = '</div>';     
-            //$arrDump[] = '##1##' . $row['multitextField'];       
-            //$arrDump[] = '##2##' . unserialize($row['multitextField']);           
+            // $arrDump[] = '##1##: ' . var_dump($string);       
+            // $arrDump[] = '##2##: ' . unserialize($row['multitextField']);           
         }
 
         $template->consultationsRow = '';
@@ -124,7 +145,7 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
         }
 
         if (!empty($arrDump)){
-            //$template->dump = $arrDump;
+            $template->dump = $arrDump;
         }        
 
  

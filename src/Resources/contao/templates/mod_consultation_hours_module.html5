@@ -11,9 +11,7 @@
       </div>
     </div>
 
-    <pre>    <?= var_dump($this->dump) ?></pre>
-
     <pre>
-        <?php echo $this->showTemplateVars(); ?>
+        <?php //echo $this->showTemplateVars(); ?>
     </pre>   
 <?php $this->endblock(); ?>
