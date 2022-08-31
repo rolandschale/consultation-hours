@@ -135,7 +135,7 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
     Start
  -----------------------------------*/
  
-        $template->headline = 'test';
+        $template->headline = $this->get('title');
  
  
         return $template->getResponse();
