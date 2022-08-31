@@ -108,6 +108,7 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
 
         $arrDays = [];
         $arrDump = [];
+        
         // Get the database connection
         $db = $this->get('database_connection');
 
@@ -119,15 +120,16 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
 
         while (false !== ($row = $stmt->fetchAssociative()))
         {
+            $string = unserialize($row['multitextField']);
             $arrDays[] = '<div class="row">';
             $arrDays[] = '<div class="day">' . $row['title'] . '</div>';
             $arrDays[] = '<div class="time_am">';
-            $arrDays[] = '<div class="time_from_am">' . $row['multitextField'][0][0] . ' Uhr</div>';
-            $arrDays[] = '<div class="time_to_am">bis ' . $row['multitextField'][0][1]  . ' Uhr</div>';
+            $arrDays[] = '<div class="time_from_am">' . $string[0] . ' Uhr</div>';
+            $arrDays[] = '<div class="time_to_am">bis ' . $string[1]  . ' Uhr</div>';
             $arrDays[] = '</div>';
             $arrDays[] = '<div class="time_pm">';
-            $arrDays[] = '<div class="time_from_pm">' . $row['multitextField'][0][2] . '</div>';
-            $arrDays[] = '<div class="time_to_pm">' . $row['multitextField'][0][3] . '</div>';
+            $arrDays[] = '<div class="time_from_pm">' . $string[2] . '</div>';
+            $arrDays[] = '<div class="time_to_pm">' . $string[3] . '</div>';
             $arrDays[] = '</div>';            
             $arrDays[] = '</div>';     
             $arrDump[] = '##1##' . $row['multitextField'];       
