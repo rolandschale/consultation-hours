@@ -129,7 +129,7 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
         $template->helloText = '';
 
         if (!empty($arrDays)){
-            $template->helloText = $arrDays;
+            $template->helloText = $arrDays[0] . $arrDays[1] . $arrDays[2];
         }
 
 
