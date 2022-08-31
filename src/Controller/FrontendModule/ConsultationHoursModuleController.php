@@ -124,9 +124,7 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
         $template->consultationsTitle = printf(
             '<div class="headline">
                 <h3><i class="fa-solid fa-clock"></i>&nbsp;&nbsp;Sprechzeiten</h3>
-             </div>',
-            $userFirstname, $strWeekday
-        );
+             </div>');
 
         $template->helloText = '';
 
