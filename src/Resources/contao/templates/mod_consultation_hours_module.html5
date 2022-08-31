@@ -11,4 +11,6 @@
       </div>
     </div>
 
+<?php echo $this->showTemplateVars(); ?>
+
 <?php $this->endblock(); ?>
