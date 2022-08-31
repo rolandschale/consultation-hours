@@ -106,17 +106,18 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
         $translator = $this->get('translator');
         $strWeekday = $translator->trans('DAYS.' . $intWeekday, [], 'contao_default');
 
-        $arrGuests = [];
+        $arrDays = [];
 
         // Get the database connection
         $db = $this->get('database_connection');
 
         /** @var \Doctrine\DBAL\Result $stmt */
-        $stmt = $db->executeQuery('SELECT * FROM tl_member WHERE gender = ? ORDER BY lastname', ['female']);
+        // $stmt = $db->executeQuery('SELECT * FROM tl_member WHERE gender = ? ORDER BY lastname', ['female']);
+        $stmt = $db->executeQuery('SELECT * FROM tl_consultation_hours');
 
         while (false !== ($row = $stmt->fetchAssociative()))
         {
-            $arrGuests[] = $row['firstname'];
+            $arrDays[] = $row['title'];
         }
 
         $template->helloTitle = sprintf(
@@ -126,8 +127,8 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
 
         $template->helloText = '';
 
-        if (!empty($arrGuests)){
-            $template->helloText = 'Our guests today are: ' . implode(', ', $arrGuests);
+        if (!empty($arrDays)){
+            $template->helloText = 'Tage: ' . implode(', ', $arrDays);
         }
 
 
@@ -135,7 +136,7 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
     Start
  -----------------------------------*/
  
-        $template->headline = $this->get('title');
+        //$template->headline = $this->get('title');
  
  
         return $template->getResponse();
