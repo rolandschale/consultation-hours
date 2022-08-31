@@ -143,7 +143,9 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
             $template->consultationsRow = implode($arrDays);
         }
 
-        
+        if (!empty($arrDump)){
+            $template->dump = $arrDump;
+        }        
 /* -----------------------------------
     Start
     
