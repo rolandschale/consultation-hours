@@ -115,24 +115,27 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
         // $stmt = $db->executeQuery('SELECT * FROM tl_member WHERE gender = ? ORDER BY lastname', ['female']);
         $stmt = $db->executeQuery('SELECT * FROM tl_consultation_hours');
 
+        $template->consultationsTitle = 'Sprechzeiten';
+
         while (false !== ($row = $stmt->fetchAssociative()))
         {
-            $arrDays[] = $row['title'].$row['multitextField'];
-            
+            $arrDays[] = '<div class="row">';
+            $arrDays[] = '<div class="day">' . $row['title'] . '</div>';
+            $arrDays[] = '<div class="time_am">';
+            $arrDays[] = '<div class="time_from_am">' . $row['multitextField'][0] . ' Uhr</div>';
+            $arrDays[] = '<div class="time_to_am">bis ' . $row['multitextField'][1]  . ' Uhr</div>';
+            $arrDays[] = '</div>';
+            $arrDays[] = '<div class="time_pm">';
+            $arrDays[] = '<div class="time_from_pm">' . $row['multitextField'][2] . '</div>';
+            $arrDays[] = '<div class="time_to_pm">' . $row['multitextField'][3] . '</div>';
+            $arrDays[] = '</div>';            
         }
-        $template->wrapperOpen = '<div class="ce_rsce_open_hours">';
-        $template->consultationsTitle = printf(
-            '<div class="headline">
-                <h3><i class="fa-solid fa-clock"></i>&nbsp;&nbsp;Sprechzeiten</h3>
-             </div>');
 
-        $template->helloText = '';
+        $template->consultationsRow = '';
 
         if (!empty($arrDays)){
-            $template->helloText = $arrDays[0] . $arrDays[1] . $arrDays[2];
+            $template->consultationsRow = implode($arrDays);
         }
-
-        $template->wrapperClose = '</div>';
 
 /* -----------------------------------
     Start
