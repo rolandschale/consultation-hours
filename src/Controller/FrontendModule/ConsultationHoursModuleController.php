@@ -81,30 +81,30 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
     }
 
     /**
-     * Generate the dummy module
+     * Generate the module
      */
     protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
     {
-        $userFirstname = 'DUDE';
-        $user = $this->get('security.helper')->getUser();
-
-        // Get the logged in frontend user... if there is one
-        if ($user instanceof FrontendUser)
-        {
-            $userFirstname = $user->firstname;
-        }
+//         $userFirstname = 'DUDE';
+//         $user = $this->get('security.helper')->getUser();
+// 
+//         // Get the logged in frontend user... if there is one
+//         if ($user instanceof FrontendUser)
+//         {
+//             $userFirstname = $user->firstname;
+//         }
 
         /** @var Session $session */
-        $session = $request->getSession();
-        $bag = $session->getBag('contao_frontend');
-        $bag->set('foo', 'bar');
+        // $session = $request->getSession();
+        // $bag = $session->getBag('contao_frontend');
+        // $bag->set('foo', 'bar');
 
         /** @var Date $dateAdapter */
-        $dateAdapter = $this->get('contao.framework')->getAdapter(Date::class);
-
-        $intWeekday = $dateAdapter->parse('w');
-        $translator = $this->get('translator');
-        $strWeekday = $translator->trans('DAYS.' . $intWeekday, [], 'contao_default');
+//         $dateAdapter = $this->get('contao.framework')->getAdapter(Date::class);
+// 
+//         $intWeekday = $dateAdapter->parse('w');
+//         $translator = $this->get('translator');
+//         $strWeekday = $translator->trans('DAYS.' . $intWeekday, [], 'contao_default');
 
         $arrDays = [];
 
@@ -120,9 +120,11 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
             $arrDays[] = $row['title'].$row['multitextField'];
             
         }
-
-        $template->helloTitle = sprintf(
-            'Hi %s, and welcome to the "Hello World Module". Today is %s.',
+        $template->wrapperOpen = '<div class="ce_rsce_open_hours">';
+        $template->consultationsTitle = printf(
+            '<div class="headline">
+                <h3><i class="fa-solid fa-clock"></i>&nbsp;&nbsp;Sprechzeiten</h3>
+             </div>',
             $userFirstname, $strWeekday
         );
 
@@ -132,9 +134,31 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
             $template->helloText = $arrDays[0] . $arrDays[1] . $arrDays[2];
         }
 
+        $template->wrapperClose = '</div>'
 
 /* -----------------------------------
     Start
+    
+    
+    
+    <div class="ce_rsce_open_hours">
+      <div class="headline">
+        <h3><i class="fa-solid fa-clock"></i>&nbsp;&nbsp;Sprechzeiten</h3>
+      </div>
+      <div>
+        <div class="row">
+          <div class="day">Montag</div>
+          <div class="time_am">
+            <div class="time_from_am">08:00</div>
+            <div class="time_to_am">bis 13:00 Uhr</div>
+          </div>
+          <div class="time_pm">
+            <div class="time_from_pm">&nbsp;</div>
+            <div class="time_to_pm">&nbsp;</div>
+          </div>
+        </div>
+      </div>
+    </div>
  -----------------------------------*/
  
         //$template->headline = $this->get('title');
