@@ -82,7 +82,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
     ),
     // Palettes
     'palettes'    => array(
-         'default'      => '{first_legend},title,multitextField'
+         'default'      => '{first_legend},title,multitextField,{second_legend},addSubpalette'
     ),
 
     // Fields
@@ -93,25 +93,100 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
         'tstamp'         => array(
             'sql' => "int(10) unsigned NOT NULL default '0'"
         ),
-        'title'          => array(
+        'name_1'          => array(
             'inputType' => 'text',
             'exclude'   => true,
             'search'    => true,
             'filter'    => true,
             'sorting'   => true,
             'flag'      => 1,
-            'eval'      => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'),
+            'eval'      => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w100'),
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
-        'multitextField' => array(
+        'name_2'          => array(
             'inputType' => 'text',
             'exclude'   => true,
             'search'    => true,
             'filter'    => true,
             'sorting'   => true,
-            'eval'      => array('multiple' => true, 'size' => 4, 'decodeEntities' => true, 'tl_class' => 'w50'),
+            'flag'      => 1,
+            'eval'      => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w100'),
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
+        'name_3'          => array(
+            'inputType' => 'text',
+            'exclude'   => true,
+            'search'    => true,
+            'filter'    => true,
+            'sorting'   => true,
+            'flag'      => 1,
+            'eval'      => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w100'),
+            'sql'       => "varchar(255) NOT NULL default ''"
+        ),
+        'street'          => array(
+            'inputType' => 'text',
+            'exclude'   => true,
+            'search'    => true,
+            'filter'    => true,
+            'sorting'   => true,
+            'flag'      => 1,
+            'eval'      => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w100'),
+            'sql'       => "varchar(255) NOT NULL default ''"
+        ),
+        'zip'          => array(
+            'inputType' => 'text',
+            'exclude'   => true,
+            'search'    => true,
+            'filter'    => true,
+            'sorting'   => true,
+            'flag'      => 1,
+            'eval'      => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w100'),
+            'sql'       => "varchar(255) NOT NULL default ''"
+        ),
+        'city'          => array(
+            'inputType' => 'text',
+            'exclude'   => true,
+            'search'    => true,
+            'filter'    => true,
+            'sorting'   => true,
+            'flag'      => 1,
+            'eval'      => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w100'),
+            'sql'       => "varchar(255) NOT NULL default ''"
+        ),
+        'addSubpalette'  => array(
+            'exclude'   => true,
+            'inputType' => 'checkbox',
+            'eval'      => array('submitOnChange' => true, 'tl_class' => 'w50 clr'),
+            'sql'       => "char(1) NOT NULL default ''"
+        ),
+        'phone'  => array(
+            'inputType' => 'text',
+            'exclude'   => true,
+            'search'    => true,
+            'filter'    => true,
+            'sorting'   => true,
+            'eval'      => array('rte' => 'tinyMCE', 'tl_class' => 'clr'),
+            'sql'       => 'text NULL'
+        ),
+        'mobile'  => array(
+            'inputType' => 'text',
+            'exclude'   => true,
+            'search'    => true,
+            'filter'    => true,
+            'sorting'   => true,
+            'eval'      => array('rte' => 'tinyMCE', 'tl_class' => 'clr'),
+            'sql'       => 'text NULL'
+        ),
+        'email'  => array(
+            'inputType' => 'text',
+            'exclude'   => true,
+            'search'    => true,
+            'filter'    => true,
+            'sorting'   => true,
+            'eval'      => array('rte' => 'tinyMCE', 'tl_class' => 'clr'),
+            'sql'       => 'text NULL'
+        ),
+
     )
 );
 
