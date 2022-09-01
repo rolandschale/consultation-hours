@@ -178,7 +178,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'search'    => true,
             'filter'    => true,
             'sorting'   => true,
-            'eval'      => array('rgxp' => 'mail','mandatory' => false, 'maxlength' => 50, 'tl_class' => 'w100'),
+            'eval'      => array('rgxp' => 'email','mandatory' => false, 'maxlength' => 50, 'tl_class' => 'w100'),
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
 
