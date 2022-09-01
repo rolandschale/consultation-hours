@@ -82,7 +82,8 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
     ),
     // Palettes
     'palettes'    => array(
-         'default'      => '{first_legend},title,multitextField,{second_legend},addSubpalette'
+         'default'      => '{first_legend},name_1,name_2,name_3,street,zip,city
+                            {second_legend},phone,mobile,email'
     ),
 
     // Fields
@@ -110,7 +111,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'filter'    => true,
             'sorting'   => true,
             'flag'      => 1,
-            'eval'      => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w100'),
+            'eval'      => array('mandatory' => false, 'maxlength' => 255, 'tl_class' => 'w100'),
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
         'name_3'          => array(
@@ -120,7 +121,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'filter'    => true,
             'sorting'   => true,
             'flag'      => 1,
-            'eval'      => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w100'),
+            'eval'      => array('mandatory' => false, 'maxlength' => 255, 'tl_class' => 'w100'),
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
         'street'          => array(
@@ -140,7 +141,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'filter'    => true,
             'sorting'   => true,
             'flag'      => 1,
-            'eval'      => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w100'),
+            'eval'      => array('mandatory' => true, 'maxlength' => 5, 'tl_class' => 'w100'),
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
         'city'          => array(
@@ -153,12 +154,12 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'eval'      => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w100'),
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
-        'addSubpalette'  => array(
-            'exclude'   => true,
-            'inputType' => 'checkbox',
-            'eval'      => array('submitOnChange' => true, 'tl_class' => 'w50 clr'),
-            'sql'       => "char(1) NOT NULL default ''"
-        ),
+        // 'addSubpalette'  => array(
+        //     'exclude'   => true,
+        //     'inputType' => 'checkbox',
+        //     'eval'      => array('submitOnChange' => true, 'tl_class' => 'w50 clr'),
+        //     'sql'       => "char(1) NOT NULL default ''"
+        // ),
         'phone'  => array(
             'inputType' => 'text',
             'exclude'   => true,
