@@ -44,7 +44,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'panelLayout' => ''
         ),
         'label'             => array(
-            'fields' => array('title'),
+            'fields' => array('name_1'),
             'format' => '%s',
         ),
         'global_operations' => array(
@@ -61,17 +61,17 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
                 'href'  => 'act=edit',
                 'icon'  => 'edit.svg'
             ),
-            'copy'   => array(
-                'label' => &$GLOBALS['TL_LANG']['tl_consultation_hours_address']['copy'],
-                'href'  => 'act=copy',
-                'icon'  => 'copy.svg'
-            ),
-            'delete' => array(
-                'label'      => &$GLOBALS['TL_LANG']['tl_consultation_hours_address']['delete'],
-                'href'       => 'act=delete',
-                'icon'       => 'delete.svg',
-                'attributes' => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
-            ),
+            // 'copy'   => array(
+            //     'label' => &$GLOBALS['TL_LANG']['tl_consultation_hours_address']['copy'],
+            //     'href'  => 'act=copy',
+            //     'icon'  => 'copy.svg'
+            // ),
+            // 'delete' => array(
+            //     'label'      => &$GLOBALS['TL_LANG']['tl_consultation_hours_address']['delete'],
+            //     'href'       => 'act=delete',
+            //     'icon'       => 'delete.svg',
+            //     'attributes' => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
+            // ),
             'show'   => array(
                 'label'      => &$GLOBALS['TL_LANG']['tl_consultation_hours_address']['show'],
                 'href'       => 'act=show',
@@ -172,7 +172,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'eval'      => array('rgxp' => 'phone','mandatory' => false, 'maxlength' => 20, 'tl_class' => 'w100'),
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
-        'e_mail'  => array(
+        'mail_1'  => array(
             'inputType' => 'text',
             'exclude'   => true,
             'search'    => true,
