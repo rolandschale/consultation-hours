@@ -19,6 +19,8 @@ use Rolandschale\ConsultationHoursBundle\Controller\FrontendModule\ConsultationH
  */
 $GLOBALS['TL_LANG']['MOD']['consultation_hours_modules'] = 'Stammdaten';
 $GLOBALS['TL_LANG']['MOD']['consultation_hours_collection'] = ['Sprechzeiten', 'Bearbeiten der Sprechzeiten'];
+$GLOBALS['TL_LANG']['MOD']['consultation_hours_vacation'] = ['Urlaub', 'Bearbeiten der Urlaubzeiten'];
+$GLOBALS['TL_LANG']['MOD']['consultation_hours_address'] = ['Praxisdaten', 'Bearbeiten der Praxisfaten'];
 
 /**
  * Frontend modules
