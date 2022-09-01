@@ -21,7 +21,7 @@ $GLOBALS['BE_MOD']['consultation_hours_modules']['consultation_hours_collection'
 $GLOBALS['BE_MOD']['consultation_hours_modules']['consultation_hours_vacation'] = array(
     'tables' => array('tl_consultation_hours_vacation')
 );
-$GLOBALS['BE_MOD']['consultation_hours_modules']['consultation_hours_vacation'] = array(
+$GLOBALS['BE_MOD']['consultation_hours_modules']['consultation_hours_address'] = array(
     'tables' => array('tl_consultation_hours_address')
 );
 
