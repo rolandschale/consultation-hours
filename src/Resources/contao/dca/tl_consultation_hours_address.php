@@ -82,7 +82,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
     ),
     // Palettes
     'palettes'    => array(
-        'default'      => '{first_legend},name_1,name_2,name_3,street,zip,city;{second_legend},phone,mobile,email}'
+        'default'      => '{first_legend},name_1,name_2,name_3,street,zip,city;{second_legend},phone_1,phone_2,e_mail}'
     ),
 
     // Fields
@@ -154,7 +154,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
 
-        'phone'  => array(
+        'phone_1'  => array(
             'inputType' => 'text',
             'exclude'   => true,
             'search'    => true,
@@ -163,7 +163,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'eval'      => array('rgxp' => 'phone','mandatory' => false, 'maxlength' => 20, 'tl_class' => 'w100'),
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
-        'mobile'  => array(
+        'phone_2'  => array(
             'inputType' => 'text',
             'exclude'   => true,
             'search'    => true,
@@ -172,7 +172,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'eval'      => array('rgxp' => 'phone','mandatory' => false, 'maxlength' => 20, 'tl_class' => 'w100'),
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
-        'email'  => array(
+        'e_mail'  => array(
             'inputType' => 'text',
             'exclude'   => true,
             'search'    => true,
