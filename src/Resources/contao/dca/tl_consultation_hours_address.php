@@ -82,7 +82,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
     ),
     // Palettes
     'palettes'    => array(
-        'default'      => '{first_legend},name_1,name_2,name_3,street,zip,city;{second_legend},phone_1,phone_2,e_mail}'
+        'default'      => '{first_legend},name_1,name_2,name_3,street,zip,city;{second_legend},phone_1,phone_2,mail_1}'
     ),
 
     // Fields
@@ -178,7 +178,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'search'    => true,
             'filter'    => true,
             'sorting'   => true,
-            'eval'      => array('rgxp' => 'email','mandatory' => false, 'maxlength' => 50, 'tl_class' => 'w100'),
+            'eval'      => array('rgxp' => 'email','mandatory' => false, 'maxlength' => 100, 'tl_class' => 'w100'),
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
 
