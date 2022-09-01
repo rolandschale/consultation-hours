@@ -44,7 +44,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'panelLayout' => ''
         ),
         'label'             => array(
-            'fields' => array('title','multitextField[0]','multitextField[1]','multitextField[2]','multitextField[3]'),
+            'fields' => array('title'),
             'format' => '%s',
         ),
         'global_operations' => array(
@@ -82,8 +82,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
     ),
     // Palettes
     'palettes'    => array(
-         'default'      => '{first_legend},name_1,name_2,name_3,street,zip,city
-                            {second_legend},phone,mobile,email'
+        'default'      => '{first_legend},name_1,name_2,name_3,street,zip,city;{second_legend},phone,mobile,email}'
     ),
 
     // Fields
@@ -154,20 +153,15 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'eval'      => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w100'),
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
-        // 'addSubpalette'  => array(
-        //     'exclude'   => true,
-        //     'inputType' => 'checkbox',
-        //     'eval'      => array('submitOnChange' => true, 'tl_class' => 'w50 clr'),
-        //     'sql'       => "char(1) NOT NULL default ''"
-        // ),
+
         'phone'  => array(
             'inputType' => 'text',
             'exclude'   => true,
             'search'    => true,
             'filter'    => true,
             'sorting'   => true,
-            'eval'      => array('rte' => 'tinyMCE', 'tl_class' => 'clr'),
-            'sql'       => 'text NULL'
+            'eval'      => array('rgxp' => 'phone','mandatory' => false, 'maxlength' => 20, 'tl_class' => 'w100'),
+            'sql'       => "varchar(255) NOT NULL default ''"
         ),
         'mobile'  => array(
             'inputType' => 'text',
@@ -175,8 +169,8 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'search'    => true,
             'filter'    => true,
             'sorting'   => true,
-            'eval'      => array('rte' => 'tinyMCE', 'tl_class' => 'clr'),
-            'sql'       => 'text NULL'
+            'eval'      => array('rgxp' => 'phone','mandatory' => false, 'maxlength' => 20, 'tl_class' => 'w100'),
+            'sql'       => "varchar(255) NOT NULL default ''"
         ),
         'email'  => array(
             'inputType' => 'text',
@@ -184,8 +178,8 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'search'    => true,
             'filter'    => true,
             'sorting'   => true,
-            'eval'      => array('rte' => 'tinyMCE', 'tl_class' => 'clr'),
-            'sql'       => 'text NULL'
+            'eval'      => array('rgxp' => 'mail','mandatory' => false, 'maxlength' => 50, 'tl_class' => 'w100'),
+            'sql'       => "varchar(255) NOT NULL default ''"
         ),
 
     )
