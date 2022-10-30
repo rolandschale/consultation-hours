@@ -160,7 +160,7 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'search'    => true,
             'filter'    => true,
             'sorting'   => true,
-            'eval'      => array('rgxp' => 'phone','mandatory' => false, 'maxlength' => 20, 'tl_class' => 'w100'),
+            'eval'      => array('rgxp' => 'phone','mandatory' => false, 'maxlength' => 30, 'tl_class' => 'w100'),
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
         'phone_2'  => array(
@@ -169,10 +169,19 @@ $GLOBALS['TL_DCA']['tl_consultation_hours_address'] = array(
             'search'    => true,
             'filter'    => true,
             'sorting'   => true,
-            'eval'      => array('rgxp' => 'phone','mandatory' => false, 'maxlength' => 20, 'tl_class' => 'w100'),
+            'eval'      => array('rgxp' => 'phone','mandatory' => false, 'maxlength' => 30, 'tl_class' => 'w100'),
             'sql'       => "varchar(255) NOT NULL default ''"
         ),
         'mail_1'  => array(
+            'inputType' => 'text',
+            'exclude'   => true,
+            'search'    => true,
+            'filter'    => true,
+            'sorting'   => true,
+            'eval'      => array('rgxp' => 'email','mandatory' => false, 'maxlength' => 100, 'tl_class' => 'w100'),
+            'sql'       => "varchar(255) NOT NULL default ''"
+        ),
+        'mail_2'  => array(
             'inputType' => 'text',
             'exclude'   => true,
             'search'    => true,

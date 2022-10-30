@@ -15,7 +15,7 @@ declare(strict_types=1);
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_consultation_hours_address']['first_legend'] = "Adresse";
+$GLOBALS['TL_LANG']['tl_consultation_hours_address']['first_legend'] = "Anschrift";
 $GLOBALS['TL_LANG']['tl_consultation_hours_address']['second_legend'] = "Kontakt";
 
 /**
@@ -36,8 +36,11 @@ $GLOBALS['TL_LANG']['tl_consultation_hours_address']['street'] = ["Straße", "Ge
 $GLOBALS['TL_LANG']['tl_consultation_hours_address']['zip'] = ["PLZ", "Geben Sie die PLZ ein"];
 $GLOBALS['TL_LANG']['tl_consultation_hours_address']['city'] = ["Ort", "Geben Sie den Ortsnamen ein"];
 
-$GLOBALS['TL_LANG']['tl_consultation_hours_address']['phone'] = ["Telefon", "Geben Sie eine Telefonnummer ein"];
-// $GLOBALS['TL_LANG']['tl_consultation_hours_address'][''] = ["Chosen Feld", "Wählen Sie aus."];
+$GLOBALS['TL_LANG']['tl_consultation_hours_address']['phone_1'] = ["Telefon", "Geben Sie eine Telefonnummer ein"];
+$GLOBALS['TL_LANG']['tl_consultation_hours_address']['phone_2'] = ["Mobil", "Geben Sie eine Telefonnummer ein"];
+$GLOBALS['TL_LANG']['tl_consultation_hours_address']['mail_1'] = ["E-Mail Praxis", "Geben Sie eine Telefonnummer ein"];
+$GLOBALS['TL_LANG']['tl_consultation_hours_address']['mail_2'] = ["E-Mail Administrativ", "Geben Sie eine Telefonnummer ein"];
+$GLOBALS['TL_LANG']['tl_consultation_hours_address']['sonstiges'] = ["Chosen Feld", "Wählen Sie aus."];
 // $GLOBALS['TL_LANG']['tl_consultation_hours_address'][''] = ["Multitext Feld", "Geben Sie die Werte ein"];
 // $GLOBALS['TL_LANG']['tl_consultation_hours_address']['addSubpalette'] = ["Erweiterte Einstellungen aktivieren", "Hier können Sie die erweiterten Einstellungen aktivieren."];
 // $GLOBALS['TL_LANG']['tl_consultation_hours_address'][''] = ["", "Geben Sie einen Text ein"];
@@ -51,4 +54,4 @@ $GLOBALS['TL_LANG']['tl_consultation_hours_address']['phone'] = ["Telefon", "Geb
 /**
  * Buttons
  */
-$GLOBALS['TL_LANG']['tl_consultation_hours_address']['customButton'] = "Custom Routine starten";
+//$GLOBALS['TL_LANG']['tl_consultation_hours_address']['customButton'] = "Custom Routine starten";

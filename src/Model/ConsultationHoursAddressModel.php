@@ -26,4 +26,3 @@ class ConsultationHoursModel extends Model
     protected static $strTable = 'tl_consultation_hours_address';
 
 }
-
