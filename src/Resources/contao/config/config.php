@@ -18,10 +18,10 @@ use Rolandschale\ConsultationHoursBundle\Model\ConsultationHoursModel;
 $GLOBALS['BE_MOD']['consultation_hours_modules']['consultation_hours_collection'] = array(
     'tables' => array('tl_consultation_hours')
 );
-$GLOBALS['BE_MOD']['consultation_hours_modules']['consultation_hours_vacation'] = array(
+//$GLOBALS['BE_MOD']['consultation_hours_modules']['consultation_hours_vacation'] = array(
     'tables' => array('tl_consultation_hours_vacation')
 );
-$GLOBALS['BE_MOD']['consultation_hours_modules']['consultation_hours_address'] = array(
+//$GLOBALS['BE_MOD']['consultation_hours_modules']['consultation_hours_address'] = array(
     'tables' => array('tl_consultation_hours_address')
 );
 
@@ -29,5 +29,5 @@ $GLOBALS['BE_MOD']['consultation_hours_modules']['consultation_hours_address'] =
  * Models
  */
 $GLOBALS['TL_MODELS']['tl_consultation_hours'] = ConsultationHoursModel::class;
-$GLOBALS['TL_MODELS']['tl_consultation_hours_address'] = ConsultationHoursAddressModel::class;
-$GLOBALS['TL_MODELS']['tl_consultation_hours_vacation'] = ConsultationHoursVacationModel::class;
+//$GLOBALS['TL_MODELS']['tl_consultation_hours_address'] = ConsultationHoursAddressModel::class;
+//$GLOBALS['TL_MODELS']['tl_consultation_hours_vacation'] = ConsultationHoursVacationModel::class;
