@@ -27,6 +27,3 @@ $GLOBALS['TL_LANG']['MOD']['consultation_hours_collection'] = ['Sprechzeiten', '
  */
 $GLOBALS['TL_LANG']['FMD']['consultation_hours_modules'] = 'Sprechzeiten Modul';
 $GLOBALS['TL_LANG']['FMD'][ConsultationHoursModuleController::TYPE] = ['Sprechzeiten', 'Sprechzeiten'];
-$GLOBALS['TL_LANG']['FMD'][ConsultationHoursModuleController::TYPE] = ['Bla', 'Bla bla'];
-$GLOBALS['TL_LANG']['FMD'][ConsultationHoursModuleController::TYPE] = ['Blub', 'Blub blub'];
-
