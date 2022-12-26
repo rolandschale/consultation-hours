@@ -96,7 +96,7 @@ class ConsultationHoursModuleController extends AbstractFrontendModuleController
         /** @var \Doctrine\DBAL\Result $stmt */
         $stmt = $db->executeQuery('SELECT * FROM tl_consultation_hours');
 
-        $template->consultationsTitle = 'Adresse';
+        $template->consultationsTitle = 'Sprechzeiten';
 
         while (false !== ($row = $stmt->fetchAssociative()))
         {
